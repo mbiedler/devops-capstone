@@ -135,7 +135,7 @@ class TestAccountService(TestCase):
             f"{BASE_URL}/{account.id}", content_type="application/json"
         )
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
-            data = resp.get_json()
+        data = resp.get_json()
         self.assertEqual(data["name"], account.name)
     
     def test_get_account_not_found(self):
